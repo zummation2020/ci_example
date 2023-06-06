@@ -3,6 +3,7 @@ from task import conv_num
 from task import my_datetime
 from task import conv_endian
 
+
 class MyDatetimeTestCase(unittest.TestCase):
 
     def test_epoch(self):
@@ -25,6 +26,12 @@ class MyDatetimeTestCase(unittest.TestCase):
         expected = '02-29-8360'
         self.assertEqual(my_datetime(num_sec), expected)
 
+    def test_5(self):
+        num_sec = 1686029453
+        expected = '06-06-2023'
+        self.assertEqual(my_datetime(num_sec), expected)
+
+
 class TestConvEndian(unittest.TestCase):
 
     def test_conv_endian1(self):
@@ -32,6 +39,21 @@ class TestConvEndian(unittest.TestCase):
 
     def test_conv_endian2(self):
         self.assertEqual(conv_endian(954786), '0E 91 A2')
+
+    def test_conv_endian3(self):
+        self.assertEqual(conv_endian(16), '10')
+
+    def test_conv_endian4(self):
+        self.assertEqual(conv_endian(16, 'big'), '10')
+
+    def test_conv_endian5(self):
+        self.assertEqual(conv_endian(4294967294, 'little'), 'FE FF FF FF')
+
+    def test_conv_endian6(self):
+        self.assertEqual(conv_endian(2659857920, 'little'), '00 36 8A 9E')
+
+    def test_conv_endian7(self):
+        self.assertEqual(conv_endian(111111, 'big'), '01 B2 07')
 
 
 class ConvNumTestCase(unittest.TestCase):
