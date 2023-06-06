@@ -154,7 +154,7 @@ def conv_num(num_str):
         except ValueError:
             # If the string cannot be converted to an integer, return None
             return None
-        
+
 
 def my_datetime(num_sec: int) -> str:
 

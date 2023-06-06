@@ -3,6 +3,7 @@ from task import conv_num
 from task import my_datetime
 from task import conv_endian
 
+
 class MyDatetimeTestCase(unittest.TestCase):
 
     def test_epoch(self):
@@ -24,6 +25,7 @@ class MyDatetimeTestCase(unittest.TestCase):
         num_sec = 201653971200
         expected = '02-29-8360'
         self.assertEqual(my_datetime(num_sec), expected)
+
 
 class TestConvEndian(unittest.TestCase):
 
