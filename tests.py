@@ -1,16 +1,14 @@
 import unittest
-import task
+from task import conv_endian
 
 
-class TestCase(unittest.TestCase):
+class TestConvEndian(unittest.TestCase):
 
-    def test1(self):
-        expected = "Hello World"
-        self.assertEqual(task.my_func(), expected)
+    def test_conv_endian1(self):
+        self.assertEqual(conv_endian(954786, 'big'), '0E 91 A2')
 
-    def test2(self):
-        expected = "Hola World"
-        self.assertNotEqual(task.my_func(), expected)
+    def test_conv_endian2(self):
+        self.assertEqual(conv_endian(954786), '0E 91 A2')
 
 
 if __name__ == '__main__':
