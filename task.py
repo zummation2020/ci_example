@@ -1,6 +1,3 @@
-def my_func():
-    return "Hello World"
-
 def my_datetime(num_sec: int) -> str:
 
     def is_leap(year: int) -> bool:
