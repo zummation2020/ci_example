@@ -1,5 +1,15 @@
-import unittest
 from task import conv_num
+import unittest
+from task import conv_endian
+
+
+class TestConvEndian(unittest.TestCase):
+
+    def test_conv_endian1(self):
+        self.assertEqual(conv_endian(954786, 'big'), '0E 91 A2')
+
+    def test_conv_endian2(self):
+        self.assertEqual(conv_endian(954786), '0E 91 A2')
 
 
 class ConvNumTestCase(unittest.TestCase):
@@ -23,7 +33,6 @@ class ConvNumTestCase(unittest.TestCase):
         num_str = '123.'
         expected = 123.0
         self.assertEqual(conv_num(num_str), expected)
-
 
     def test_positive_float(self):
         num_str = '123.45'
